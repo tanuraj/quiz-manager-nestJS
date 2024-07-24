@@ -8,18 +8,19 @@ import {
 } from '@nestjs/common';
 import { QuizService } from './quiz.service';
 import { CreateQuizDto } from './dto/CreateQuiz.dto';
+import { Quiz } from './quiz.entity';
 @Controller('quiz')
 export class QuizController {
   constructor(private readonly quizService: QuizService) {}
 
   @Get() //default route is "/""
-  getAllQuiz(): number[] {
-    return this.quizService.getAllQuiz();
+  async getAllQuiz(): Promise<CreateQuizDto[]> {
+    return await this.quizService.getAllQuiz();
   }
 
   @Post()
   @UsePipes(ValidationPipe)
-  createQuiz(@Body() data: CreateQuizDto) {
-    return data;
+  async createQuiz(@Body() data: CreateQuizDto) {
+    return await this.quizService.createQuiz(data);
   }
 }
