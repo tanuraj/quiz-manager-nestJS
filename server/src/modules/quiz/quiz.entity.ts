@@ -1,3 +1,4 @@
+//Syntex for SequalizeORM
 import { Table, Model, Column, DataType } from 'sequelize-typescript';
 
 @Table
@@ -23,4 +24,10 @@ export class Quiz extends Model {
     defaultValue: true,
   })
   isActive: boolean;
+
+  @Column({
+    type: DataType.BOOLEAN,
+    defaultValue: false,
+  })
+  isDeleted: boolean;
 }
