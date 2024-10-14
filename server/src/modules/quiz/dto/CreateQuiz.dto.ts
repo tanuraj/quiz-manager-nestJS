@@ -1,4 +1,4 @@
-import { IS_LENGTH, IsNotEmpty, Length } from 'class-validator';
+import { IsNotEmpty, Length } from 'class-validator';
 export class CreateQuizDto {
   constructor(parameters) {}
 
