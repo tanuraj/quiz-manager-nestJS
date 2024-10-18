@@ -6,9 +6,9 @@ import {
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
-import { QuestionService } from './question.service';
-import { CreateQuestionDto } from './dto/CreateQuestion.dto';
-import Question from './question.entity';
+import { QuestionService } from '../services/question.service';
+import { CreateQuestionDto } from '../dto/CreateQuestion.dto';
+import Question from '../entities/question.entity';
 
 @Controller('question')
 export class QuestionController {

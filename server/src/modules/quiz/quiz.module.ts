@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { QuizController } from './quiz.controller';
-import { QuizService } from './quiz.service';
-import { quizProviders } from './quiz.providers';
-import { QuestionController } from './question.controller';
-import { questionProviders } from './question.providers';
-import { QuestionService } from './question.service';
+import { QuizController } from './controllers/quiz.controller';
+import { QuizService } from './services/quiz.service';
+import { quizProviders } from './repositories/quiz.providers';
+import { QuestionController } from './controllers/question.controller';
+import { questionProviders } from './repositories//question.providers';
+import { QuestionService } from './services/question.service';
 
 @Module({
   controllers: [QuizController, QuestionController],

@@ -1,4 +1,12 @@
-import { Column, DataType, Model, Table } from 'sequelize-typescript';
+import {
+  Column,
+  DataType,
+  Model,
+  Table,
+  BelongsTo,
+  ForeignKey,
+} from 'sequelize-typescript';
+import { Quiz } from './quiz.entity';
 
 @Table
 export default class Question extends Model {
@@ -14,4 +22,11 @@ export default class Question extends Model {
     type: DataType.STRING,
   })
   question: string;
+
+  @ForeignKey(() => Quiz)
+  @Column
+  quizId: number;
+
+  @BelongsTo(() => Quiz, 'quizId')
+  quiz: Quiz;
 }

@@ -6,8 +6,8 @@ import {
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
-import { QuizService } from './quiz.service';
-import { CreateQuizDto } from './dto/CreateQuiz.dto';
+import { QuizService } from '../services/quiz.service';
+import { CreateQuizDto } from '../dto/CreateQuiz.dto';
 
 @Controller('quiz')
 export class QuizController {

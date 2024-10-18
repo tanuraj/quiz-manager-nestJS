@@ -1,4 +1,4 @@
-import { Quiz } from './quiz.entity';
+import { Quiz } from '../entities/quiz.entity';
 import { QUIZ_REPOSITORY } from 'src/utils/constant';
 
 //For SequalizeORM

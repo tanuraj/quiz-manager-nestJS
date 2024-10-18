@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import Question from './question.entity';
+import Question from '../entities/question.entity';
 import { QUESTION_REPOSITORY } from 'src/utils/constant';
 
 @Injectable()

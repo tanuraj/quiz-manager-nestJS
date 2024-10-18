@@ -1,6 +1,6 @@
 //Syntex for SequalizeORM
-import { Table, Model, Column, DataType } from 'sequelize-typescript';
-
+import { Table, Model, Column, DataType, HasMany } from 'sequelize-typescript';
+import Question from './question.entity';
 @Table
 export class Quiz extends Model {
   @Column({
@@ -30,4 +30,7 @@ export class Quiz extends Model {
     defaultValue: false,
   })
   isDeleted: boolean;
+
+  @HasMany(() => Question, 'id')
+  questions: Question[];
 }
