@@ -5,8 +5,10 @@ import {
   Table,
   BelongsTo,
   ForeignKey,
+  HasMany,
 } from 'sequelize-typescript';
 import { Quiz } from './quiz.entity';
+import Option from './options.entity';
 
 @Table
 export default class Question extends Model {
@@ -24,9 +26,14 @@ export default class Question extends Model {
   question: string;
 
   @ForeignKey(() => Quiz)
-  @Column
+  @Column({
+    type: DataType.INTEGER,
+  })
   quizId: number;
 
-  @BelongsTo(() => Quiz, 'quizId')
+  @BelongsTo(() => Quiz, { foreignKey: 'quizId' })
   quiz: Quiz;
+
+  @HasMany(() => Option, { foreignKey: 'questionId' })
+  options: Option[];
 }

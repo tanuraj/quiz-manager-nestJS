@@ -5,10 +5,17 @@ import { QuizModule } from './modules/quiz/quiz.module';
 import { PhotoModule } from './modules/photo/photo.module';
 import { SqlOrmDbModule } from './modules/sqlOrmDb/sqlOrmDb.module';
 import { TypeOrmDbModule } from './modules/typeORMDb/typeOrmDb.module';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 
 @Module({
-  imports: [QuizModule, PhotoModule, SqlOrmDbModule, TypeOrmDbModule],
+  imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
+    QuizModule,
+    PhotoModule,
+    SqlOrmDbModule,
+    TypeOrmDbModule,
+  ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, ConfigService],
 })
 export class AppModule {}

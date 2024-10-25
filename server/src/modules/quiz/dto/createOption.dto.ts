@@ -1,11 +1,14 @@
 import { IsNotEmpty, Length } from 'class-validator';
-export class CreateQuestionDto {
+export class CreateOptionDto {
   constructor() {}
 
   @IsNotEmpty({ message: 'Question is required' })
   @Length(3, 50, { message: 'Question should be 3-5 characters long' })
-  question: string;
+  text: string;
 
   @IsNotEmpty()
-  quizId: number;
+  questionId: number;
+
+  @IsNotEmpty()
+  isCorrect: boolean;
 }

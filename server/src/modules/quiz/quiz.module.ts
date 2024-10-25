@@ -5,14 +5,19 @@ import { quizProviders } from './repositories/quiz.providers';
 import { QuestionController } from './controllers/question.controller';
 import { questionProviders } from './repositories//question.providers';
 import { QuestionService } from './services/question.service';
+import { optionProviders } from './repositories/option.providers';
+import { OptionController } from './controllers/option.controller';
+import { OptionService } from './services/option.service';
 
 @Module({
-  controllers: [QuizController, QuestionController],
+  controllers: [QuizController, QuestionController, OptionController],
   providers: [
     QuizService,
     QuestionService,
+    OptionService,
     ...quizProviders,
     ...questionProviders,
+    ...optionProviders,
   ],
 })
 export class QuizModule {}
