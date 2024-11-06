@@ -2,6 +2,7 @@
 import { Table, Model, Column, DataType, HasMany } from 'sequelize-typescript';
 import Question from './question.entity';
 import Option from './options.entity';
+
 @Table
 export class Quiz extends Model {
   @Column({

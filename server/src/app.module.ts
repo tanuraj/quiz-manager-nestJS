@@ -6,6 +6,7 @@ import { PhotoModule } from './modules/photo/photo.module';
 import { SqlOrmDbModule } from './modules/sqlOrmDb/sqlOrmDb.module';
 import { TypeOrmDbModule } from './modules/typeORMDb/typeOrmDb.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { UserModule } from './modules/user/user.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
     PhotoModule,
     SqlOrmDbModule,
     TypeOrmDbModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService, ConfigService],

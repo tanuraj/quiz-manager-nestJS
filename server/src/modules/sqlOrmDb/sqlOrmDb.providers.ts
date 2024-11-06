@@ -4,6 +4,7 @@ import { SQL_DB_PROVIDER } from 'src/utils/constant';
 import Question from '../quiz/entities/question.entity';
 import Option from '../quiz/entities/options.entity';
 import { ConfigService } from '@nestjs/config';
+import User from '../user/user.entity';
 
 const dbProviders = {
   provide: SQL_DB_PROVIDER,
@@ -16,7 +17,7 @@ const dbProviders = {
       password: configService.get('SQL_DB_PASSWORD'),
       database: configService.get('SQL_DB_NAME'),
     });
-    sequelize.addModels([Question, Quiz, Option]);
+    sequelize.addModels([Question, Quiz, Option, User]);
     await sequelize.sync({ alter: true });
     return sequelize;
   },

@@ -11,8 +11,6 @@ import { QuestionService } from '../services/question.service';
 import { CreateQuestionDto } from '../dto/CreateQuestion.dto';
 import Question from '../entities/question.entity';
 import { QuizService } from '../services/quiz.service';
-import { Quiz } from '../entities/quiz.entity';
-import { log } from 'console';
 
 @Controller('question')
 export class QuestionController {
