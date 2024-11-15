@@ -18,7 +18,7 @@ const dbProviders = {
       database: configService.get('SQL_DB_NAME'),
     });
     sequelize.addModels([Question, Quiz, Option, User]);
-    await sequelize.sync({ alter: true });
+    await sequelize.sync({ alter: false });
     return sequelize;
   },
 

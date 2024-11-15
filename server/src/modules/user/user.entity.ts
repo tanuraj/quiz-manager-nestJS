@@ -8,6 +8,7 @@ import {
   Length,
   Model,
   Table,
+  Unique,
   UpdatedAt,
 } from 'sequelize-typescript';
 
@@ -20,8 +21,9 @@ export default class User extends Model {
   @Column({ type: DataType.TEXT })
   name: string;
 
-  @Length({ max: 255 })
-  @Column({ type: DataType.STRING, unique: true })
+  @Length({ max: 200 })
+  @Unique
+  @Column({ type: DataType.STRING })
   email: string;
 
   @Column({ type: DataType.TEXT })
