@@ -1,3 +1,4 @@
+import { ApiProperty } from '@nestjs/swagger';
 import * as bcrypt from 'bcrypt';
 import {
   BeforeCreate,
@@ -14,24 +15,30 @@ import {
 
 @Table
 export default class User extends Model {
+  @ApiProperty({ description: 'User id' })
   @Column({ primaryKey: true, autoIncrement: true, type: DataType.INTEGER })
   id: number;
   comment: 'user id';
 
+  @ApiProperty({ description: 'User name' })
   @Column({ type: DataType.TEXT })
   name: string;
 
+  @ApiProperty({ description: 'User email' })
   @Length({ max: 200 })
   @Unique
   @Column({ type: DataType.STRING })
   email: string;
 
+  @ApiProperty({ description: 'User hashes password' })
   @Column({ type: DataType.TEXT })
   password: string;
 
+  @ApiProperty({ description: 'The time when the user was created' })
   @CreatedAt
   createdAt: string;
 
+  @ApiProperty({ description: 'The time when the user was updated' })
   @UpdatedAt
   updatedAt: string;
 
