@@ -28,7 +28,6 @@ export class QuizService {
   }
 
   async getQuizes(paginationDto: PaginationDto): Promise<QuizPagination> {
-    console.log('paginationDto-------------------', paginationDto);
     const page = parseInt(paginationDto.page);
     const limit = parseInt(paginationDto.limit);
     const { count, rows } = await this.quizRepository.findAndCountAll({
